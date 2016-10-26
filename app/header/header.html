@@ -1,0 +1,31 @@
+<nav ng-class="{'active-nav': checkIfMenuIsOpen()}">
+	<a href="" ng-click="toggleNav()" class="nav-toggle-btn">
+		<span class="glyphicon glyphicon-menu-hamburger text-color-orange" ng-if="!checkIfMenuIsOpen()"></span>
+	</a>
+	<div class="nav-logo">
+		<div class="text-center m-l-25 pull-left display-inline-b">
+			<a href="/" ng-click="toggleNav()">
+				<img src="images/logo.png" alt="" width="80" height="80">
+			</a>
+		</div>
+		<div class="text-center pull-right display-inline-b">
+			<a href="" class="nav-close-btn" ng-click="toggleNav()">
+				<span class="glyphicon glyphicon-remove text-color-orange" ng-if="checkIfMenuIsOpen()"></span>
+			</a>
+		</div>
+	</div>
+	<ul>
+	  	<li ng-click="toggleNav()">
+	    	<a ng-href="/" class="font-weight-600">Home</a>
+	    </li>
+	  	<li ng-click="toggleNav()">
+	    	<a ng-href="/#!/search" class="font-weight-600">Search</a>
+	  	</li>
+	  	<li ng-click="toggleNav()">
+	    	<a ng-href="/#!/about" class="font-weight-600">About</a>
+	    </li>
+	  	<li ng-click="toggleNav()">
+	    	<a ng-href="/#!/contact" class="font-weight-600">Contact</a>
+	  	</li>
+	</ul>
+</nav>

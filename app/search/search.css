@@ -1,0 +1,35 @@
+.home-bg {
+	/*height: 100vh;
+    background: rgba(0,0,0,0.66);*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.main-content{
+	max-width: 500px;
+	float: none;
+	margin: 0 auto;
+	padding: 50px 25px;
+    background: #F8F8F8;
+}
+
+.count-container {
+    font-size: 12px;
+    line-height: 20px;
+    border: 1px solid #d5d5d5;
+}
+
+.count-container .title{
+	padding: 3px 0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #eee;
+    background-image: -webkit-linear-gradient(#fcfcfc, #eee);
+    background-image: linear-gradient(#fcfcfc, #eee);
+}
+
+.count-container .count {
+	padding: 3px 0px;	
+}

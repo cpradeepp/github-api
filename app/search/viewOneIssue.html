@@ -1,0 +1,23 @@
+<div class="col-xs-12" ng-init="getOneIssue()">
+	<div class="container">
+		<div class="col-xs-12">
+			<h4>
+				<a class="font-weight-600" ng-href="/#!/search/{{searchField.user}}/{{searchField.name}}">< {{searchField.name}}:</a> 
+				<span>Issue number {{searchField.number}}</span>
+			</h4>
+		</div>
+		<div class="col-xs-12 background-color-extra-light p-b-5">
+			<h2 class="f-s-21 font-weight-600">{{oneIssue.title}}</h2>
+			<small>created by {{oneIssue.user.login}} on {{oneIssue.created_at}}</small>
+		</div>
+		<div class="col-xs-12 padding0 m-t-15">
+			<div class="col-xs-12 padding0">
+				<a ng-href="{{oneIssue.user.html_url}}" target="_blank">
+					<img ng-src="{{oneIssue.user.avatar_url}}" width="40px">
+					<span>{{oneIssue.user.login}}</span>
+				</a>
+			</div>
+			<pre class="m-t-5">{{oneIssue.body}}</pre>
+		</div>
+	</div>
+</div>

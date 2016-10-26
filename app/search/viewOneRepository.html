@@ -1,0 +1,103 @@
+<div class="col-xs-12 padding0 home-bg" ng-init="findOneRepository()">
+	<div class="container">
+		<a href="/#!/search"><< Back to search</a>
+		<div class="col-xs-12 m-t-20 padding0 border-default">
+			<div class="col-xs-12 p-t-15 p-b-15 background-color-extra-light">
+				<div class="col-xs-2 padding0">
+					<img ng-src="{{repo.owner.avatar_url}}" width="100%">
+				</div>
+				<div class="col-xs-4">
+					<h2 class="m-t-0 font-weight-600 f-s-18">Repository Name:</h2>
+					<h2 class="m-t-5 f-s-18">{{repo.name}}</h2>
+					<h2 class="m-t-0 font-weight-600 f-s-18">User:</h2>
+					<h2 class="m-t-5 f-s-18">
+						<a ng-href="{{repo.owner.html_url}}" target="_blank">
+							{{repo.owner.login}}
+							<span class="glyphicon glyphicon-new-window f-s-14"></span>
+						</a>
+					</h2>
+					<div class="col-xs-12 padding0 m-t-15">
+						<small class="font-weight-600">Language:</small>
+						<span>{{repo.language}}</span>
+					</div>
+					<div class="col-xs-12 padding0 m-t-15">
+						<small class="font-weight-600">Lastest Update:</small>
+						<span>{{repo.updated_at | date: 'short'}}</span>
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="col-xs-4 padding0 text-center count-container">
+						<div class="col-xs-6 padding0 title">
+							Watch <span class="glyphicon glyphicon-eye-open"></span>
+						</div>
+						<div class="col-xs-6 padding0 count">
+							{{repo.watchers}}
+						</div>
+					</div>
+					<div class="col-xs-4 padding0 text-center count-container">
+						<div class="col-xs-6 padding0 title">
+							Star <span class="glyphicon glyphicon-star"></span>
+						</div>
+						<div class="col-xs-6 padding0 count">
+							{{repo.stargazers_count}}
+						</div>
+					</div>
+					<div class="col-xs-4 padding0 text-center count-container">
+						<div class="col-xs-6 padding0 title">
+							Fork <span class="glyphicon glyphicon-star"></span>
+						</div>
+						<div class="col-xs-6 padding0 count">
+							{{repo.forks_count}}
+						</div>
+					</div>
+					<div class="col-xs-12 padding0 m-t-15">
+						<small class="font-weight-600">Open Issues:</small>
+						<span>{{repo.open_issues_count}}</span>
+					</div>
+					<div class="col-xs-12 padding0 m-t-15">
+						<small class="font-weight-600">Website:</small>
+						<span><a ng-href="{{repo.homepage}}" target="_blank">{{repo.homepage}}</a></span>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="col-xs-12 padding0">
+					<h4 class="font-weight-600 f-s-18">Description:</h4>
+					<p>{{repo.description}}</p>
+				</div>
+				<div class="col-xs-12 padding0">
+					<h4 class="font-weight-600 f-s-18">Clone URL:</h4>
+					<code class="padding10">{{repo.clone_url}}</code>
+				</div>
+				<div class="col-xs-12 padding0 m-t-15">
+					<h4 class="font-weight-600 f-s-18">SSH:</h4>
+					<code class="padding10">{{repo.ssh_url}}</code>
+				</div>
+				<div class="col-xs-12 padding0 m-t-15">
+					<h4 class="font-weight-600 f-s-18">GIT URL:</h4>
+					<code class="padding10">{{repo.git_url}}</code>
+				</div>
+			</div>
+			<div class="col-xs-12 padding0 m-t-20">
+				<div class="col-xs-12 background-color-extra-light text-center">
+					<h4 class="f-s-22 font-weight-600">Open Issues</h4>
+				</div>
+				<table class="table table-bordered table-hover">
+					<tr ng-repeat="issue in openIssues">
+						<td>
+							<p class="m-b-0">
+								<a class="f-s-18 font-weight-600" ng-href="/#!/search/{{searchField.user}}/{{searchField.name}}/{{issue.number}}">{{issue.title}}</a>
+							</p>
+							<small>Created by: <a ng-href="{{issue.user.html_url}}" target="_blank">{{issue.user.login}}</small>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-xs-12">
+				<ul class="pagination">
+					<li ng-repeat="page in totalPages"><a href="" ng-class="{'disabled': }">{{page}}</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

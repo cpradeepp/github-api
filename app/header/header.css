@@ -1,0 +1,85 @@
+.header-container{
+	height: 70px;
+	position: fixed; 
+	z-index: 100;
+}
+
+nav{
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	bottom: 0;
+	width: 200px;
+	transform: translate3d(-200px, 0, 0);
+	transition: transform 0.4s;
+	border-right-color: #b4b4b4;
+	border-right-style: solid;
+	border-right-width: 1px;
+	background-color: #ffffff;
+}
+
+nav ul{
+	list-style: none;
+	padding: 0;
+}
+
+nav ul li a {
+	text-decoration: none !important;
+	display: block;
+	padding: 10px 10px 10px 20px;
+	color: #444444;
+	font-size: 20px;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+nav ul li a:hover {
+	text-decoration: none !important;
+	color: #aaaaaa !important;
+}
+
+nav ul li a:focus {
+	text-decoration: none !important;
+	color: #444444 !important;
+}
+
+
+.nav-toggle-btn:hover, .nav-close-btn:hover {
+	color: #b4b4b4 !important;
+}
+
+.nav-toggle-btn {
+	display: block;
+	position: absolute;
+	left: 225px;
+	top: 20px;
+	color: #444444;
+	font-size: 25px;
+}
+
+.nav-toggle-btn span {
+	font-size: 30px;
+}
+
+.nav-close-btn {
+	color: #444444;
+    position: absolute;
+    right: 5px;
+    top: 2px;
+}
+
+.nav-close-btn span {
+	font-size: 30px;
+}
+
+.active-nav {
+	transform: translate3d(0,0,0);
+}
+
+.nav-logo {
+	min-height:100px;
+	text-align: center;
+	margin-top:15px;
+}
